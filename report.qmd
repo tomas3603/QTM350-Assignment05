@@ -12,7 +12,6 @@ format:
     toc: true
     number-sections: true
     documentclass: article
-    keep-md: true
 execute:
   echo: true
 

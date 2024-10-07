@@ -12,7 +12,7 @@
 
   <meta name="author" content="Tomas Hossain-Aguilar">
   <meta name="dcterms.date" content="2024-10-07">
-  <title>Exploratory Analysis Presentation</title>
+  <title>GDP, Life Expectancy, and Education Expenditure across the Globe</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -347,7 +347,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Exploratory Analysis Presentation</h1>
+  <h1 class="title">GDP, Life Expectancy, and Education Expenditure across the Globe</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -362,13 +362,16 @@ Tomas Hossain-Aguilar
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
 <ul>
-<li>Overview of the World Development Indicators dataset.</li>
-<li>Purpose of the analysis.</li>
+<li><p>Visualize and detail distributions of global GDP per capitas, Life-Expectancies, and Education Expenditure.</p>
+<ul>
+<li>GDP per capita and life expectancy</li>
+<li>nation’s expenditure on education as a proportion of total GDP.</li>
+</ul></li>
 </ul>
+<p>The data used throughout this study is drawn from World Development Indicators <span class="citation" data-cites="worldbank2022">World Bank (<a href="#/mckinseys-analysis-pixels-of-progress-chapter-3" role="doc-biblioref" onclick="">2022</a>)</span>.</p>
 </section>
 <section id="gdp-per-capita" class="slide level2">
 <h2>GDP per capita</h2>
-<p>The <strong>GDP per capita</strong> for the 203 countries in the dataset exhibits a wide range, reflecting significant disparities in economic prosperity across the world. The mean GDP per capita is approximately <strong>$20,345.71</strong>, with a standard deviation of <strong>$31,308.94</strong>, indicating substantial variability among countries.</p>
 <div id="cell-fig-gdp-histogram" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div id="fig-gdp-histogram" class="quarto-float quarto-figure quarto-figure-center">
@@ -383,6 +386,14 @@ Figure&nbsp;1: Figure 3: Distribution of GDP per Capita (2022). Source: World De
 </div>
 </div>
 </div>
+<ul>
+<li>Significant disparities in global economic prosperity</li>
+<li>mean GDP per capita is approximately <strong>$20,345.71</strong></li>
+<li>standard deviation of <strong>$31,308.94</strong>
+<ul>
+<li>indicating substantial variability</li>
+</ul></li>
+</ul>
 </section>
 <section id="more-key-statistics-gdp-per-capita" class="slide level2">
 <h2>More Key Statistics (GDP per capita):</h2>
@@ -393,11 +404,9 @@ Figure&nbsp;1: Figure 3: Distribution of GDP per Capita (2022). Source: World De
 <li><strong>25th percentile:</strong> $2,570.56</li>
 <li><strong>75th percentile:</strong> $25,982.63</li>
 </ul>
-<p>The median GDP per capita is significantly lower than the mean, suggesting a right-skewed distribution where a small number of countries have very high GDP per capita values, elevating the average. We observe this skew in <a href="#/gdp-per-capita" class="quarto-xref">Figure&nbsp;1</a>, above. The majority of countries have GDP per capita values clustered between the 25th and 75th percentiles ($2,570.56 to $25,982.63).</p>
 </section>
 <section id="life-expectancy" class="slide level2">
 <h2>Life Expectancy</h2>
-<p>The <strong>Life Expectancy</strong> data for 209 countries shows a global average of <strong>72.42 years</strong>, with a standard deviation of <strong>7.71 years</strong>, indicating moderate variation across countries.</p>
 <div id="cell-fig-life-expectancy-histogram" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div id="fig-life-expectancy-histogram" class="quarto-float quarto-figure quarto-figure-center">
@@ -413,6 +422,16 @@ Figure&nbsp;2: Figure 4: Distribution of Life Expectancy (2022). Source: World D
 </div>
 </div>
 </section>
+<section id="takeaways" class="slide level2">
+<h2>Takeaways</h2>
+<ul>
+<li>global average of <strong>72.42 years</strong></li>
+<li>standard deviation of <strong>7.71 years</strong>
+<ul>
+<li>moderate variation</li>
+</ul></li>
+</ul>
+</section>
 <section id="more-key-statistics-life-expectancy" class="slide level2">
 <h2>More Key Statistics (Life Expectancy):</h2>
 <ul>
@@ -422,11 +441,9 @@ Figure&nbsp;2: Figure 4: Distribution of Life Expectancy (2022). Source: World D
 <li><strong>25th percentile:</strong> 66.78 years</li>
 <li><strong>75th percentile:</strong> 78.475 years</li>
 </ul>
-<p>The median life expectancy is slightly higher than the mean, suggesting a relatively symmetrical distribution, which we can observe in the figure above, <a href="#/life-expectancy" class="quarto-xref">Figure&nbsp;2</a>. The interquartile range (66.78 to 78.475 years) captures the middle 50% of countries, highlighting that most countries have life expectancies within this range. The gap between the minimum and maximum values underscores significant differences in health outcomes and living conditions worldwide.</p>
 </section>
 <section id="gdp-and-life-expectancy" class="slide level2">
 <h2>GDP and Life Expectancy</h2>
-<p>The scatter plot in Figure <a href="#/gdp-and-life-expectancy" class="quarto-xref">Figure&nbsp;3</a> presents the relationship between GDP per capita and life expectancy across various countries in 2022. An analysis of this graph reveals several important insights. Observe a positive correlation between GDP per capita and life expectancy, as well as ‘diminishing returns’ as GDP per capita increases. This indicates that GDP per capita is less related to life expectancy for countries as GDP per capita increases.</p>
 <div id="cell-fig-gdp-life" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div id="fig-gdp-life" class="quarto-float quarto-figure quarto-figure-center">
@@ -442,9 +459,15 @@ Figure&nbsp;3: Figure 1: GDP per Capita vs.&nbsp;Life Expectancy (2022). Source:
 </div>
 </div>
 </section>
+<section id="takeaways-1" class="slide level2">
+<h2>Takeaways</h2>
+<ul>
+<li>positive correlation between GDP per capita and life expectancy</li>
+<li>diminishing returns as GDP per capita increases</li>
+</ul>
+</section>
 <section id="education-expenditure-of-gdp" class="slide level2">
 <h2>Education Expenditure (% of GDP)</h2>
-<p>For Education Expenditure as a percentage of GDP, data is available for 105 countries. The mean expenditure is 4.23% of GDP, with a standard deviation of 2.07%, reflecting variability in national investment in education.</p>
 <div id="cell-fig-education-expenditure-histogram" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div id="fig-education-expenditure-histogram" class="quarto-float quarto-figure quarto-figure-center">
@@ -460,6 +483,10 @@ Figure&nbsp;4: Figure 5: Distribution of Education Expenditure (% of GDP) (2022)
 </div>
 </div>
 </section>
+<section id="takeaways-2" class="slide level2">
+<h2>Takeaways</h2>
+<p>-mean expenditure is 4.23% of GDP - standard deviation of 2.07%</p>
+</section>
 <section id="more-key-statistics-education-expenditure" class="slide level2">
 <h2>More Key Statistics (Education Expenditure):</h2>
 <ul>
@@ -469,7 +496,6 @@ Figure&nbsp;4: Figure 5: Distribution of Education Expenditure (% of GDP) (2022)
 <li>25th percentile: 2.898%</li>
 <li>75th percentile: 5.156%</li>
 </ul>
-<p>The median expenditure is slightly below the mean, indicating a slight left-skew in the distribution, which we can again observe above, in <a href="#/education-expenditure-of-gdp" class="quarto-xref">Figure&nbsp;4</a>. The majority of countries spend between approximately 2.90% and 5.16% of their GDP on education. The maximum value of 16.58% suggests that some countries prioritize education significantly more than others relative to their economic output.</p>
 </section>
 <section id="top-10-countries-by-education-expenditure-of-gdp-in-2022" class="slide level2">
 <h2>Top 10 Countries by Education Expenditure (% of GDP) in 2022</h2>
@@ -487,6 +513,11 @@ Figure&nbsp;5: Figure 2: Top 10 Countries by Education Expenditure (% of GDP) (2
 </div>
 </div>
 </div>
+</section>
+<section id="further-visualizing" class="slide level2">
+<h2>Further Visualizing</h2>
+
+<img data-src="total-government-expenditure-on-education-gdp.png" data-align="center" class="r-stretch quarto-figure-center"><p class="caption">Public Spending on Education as a Percentage of GDP</p><p>Another visual of education expenditure as a percentage of GDP from <span class="citation" data-cites="ourworldindata_education2023">Our World in Data (<a href="#/mckinseys-analysis-pixels-of-progress-chapter-3" role="doc-biblioref" onclick="">2023</a>)</span>:</p>
 </section>
 <section id="revisiting-summary-statistics" class="slide level2">
 <h2>Revisiting Summary Statistics</h2>
@@ -523,6 +554,12 @@ max         240862.18            85.38                            16.58</code></
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-mckinsey2023pixels" class="csl-entry" role="listitem">
 McKinsey Global Institute. 2023. <span>“Pixels of Progress: Chapter 3.”</span> <a href="https://www.mckinsey.com/mgi/our-research/pixels-of-progress-chapter-3" class="uri">https://www.mckinsey.com/mgi/our-research/pixels-of-progress-chapter-3</a>.
+</div>
+<div id="ref-ourworldindata_education2023" class="csl-entry" role="listitem">
+Our World in Data. 2023. <span>“Total Government Expenditure on Education (.”</span> <a href="https://ourworldindata.org/grapher/total-government-expenditure-on-education-gdp" class="uri">https://ourworldindata.org/grapher/total-government-expenditure-on-education-gdp</a>.
+</div>
+<div id="ref-worldbank2022" class="csl-entry" role="listitem">
+World Bank. 2022. <span>“World Development Indicators.”</span> <a href="https://databank.worldbank.org/source/world-development-indicators">https://databank.worldbank.org/source/world-development-indicators</a>.
 </div>
 </div>
 </section>

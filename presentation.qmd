@@ -1,5 +1,5 @@
 ---
-title: "Exploratory Analysis Presentation"
+title: "GDP, Life Expectancy, and Education Expenditure across the Globe"
 author: "Tomas Hossain-Aguilar"
 date: "10/7/2024"
 bibliography: references.bib
@@ -8,16 +8,16 @@ format:
     theme: solarized
     transition: slide
 ---
-
 ## Introduction
 
-- Overview of the World Development Indicators dataset.
-- Purpose of the analysis.
+- Visualize and detail distributions of global GDP per capitas, Life-Expectancies, and Education Expenditure.
+ 
+  - GDP per capita and life expectancy
+  - nation's expenditure on education as a proportion of total GDP.
+
+The data used throughout this study is drawn from World Development Indicators @worldbank2022.
 
 ## GDP per capita
-
-The **GDP per capita** for the 203 countries in the dataset exhibits a wide range, reflecting significant disparities in economic prosperity across the world. The mean GDP per capita is approximately **\$20,345.71**, with a standard deviation of **\$31,308.94**, indicating substantial variability among countries.
-
 ```{python}
 #| echo: false
 #| label: fig-gdp-histogram
@@ -37,21 +37,19 @@ plt.show()
 
 ```
 
+- Significant disparities in global economic prosperity
+- mean GDP per capita is approximately **\$20,345.71**
+- standard deviation of **\$31,308.94**
+    - indicating substantial variability
 
 ## More Key Statistics (GDP per capita):
-
 - **Minimum GDP per Capita:** \$259.03
 - **Maximum GDP per Capita:** \$240,862.18
 - **Median (50th percentile):** \$7,587.59
 - **25th percentile:** \$2,570.56
 - **75th percentile:** \$25,982.63
 
-The median GDP per capita is significantly lower than the mean, suggesting a right-skewed distribution where a small number of countries have very high GDP per capita values, elevating the average. We observe this skew in @fig-gdp-histogram, above. The majority of countries have GDP per capita values clustered between the 25th and 75th percentiles (\$2,570.56 to \$25,982.63).
-
 ## Life Expectancy
-
-The **Life Expectancy** data for 209 countries shows a global average of **72.42 years**, with a standard deviation of **7.71 years**, indicating moderate variation across countries.
-
 ```{python}
 #| echo: false
 #| label: fig-life-expectancy-histogram
@@ -67,6 +65,11 @@ plt.show()
 
 ```
 
+## Takeaways
+- global average of **72.42 years**
+- standard deviation of **7.71 years**
+  - moderate variation
+
 ## More Key Statistics (Life Expectancy):
 
 - **Minimum Life Expectancy:** 52.997 years
@@ -75,11 +78,7 @@ plt.show()
 - **25th percentile:** 66.78 years
 - **75th percentile:** 78.475 years
 
-The median life expectancy is slightly higher than the mean, suggesting a relatively symmetrical distribution, which we can observe in the figure above, @fig-life-expectancy-histogram. The interquartile range (66.78 to 78.475 years) captures the middle 50% of countries, highlighting that most countries have life expectancies within this range. The gap between the minimum and maximum values underscores significant differences in health outcomes and living conditions worldwide.
-
 ## GDP and Life Expectancy
-
-The scatter plot in Figure @fig-gdp-life presents the relationship between GDP per capita and life expectancy across various countries in 2022. An analysis of this graph reveals several important insights. Observe a positive correlation between GDP per capita and life expectancy, as well as 'diminishing returns' as GDP per capita increases. This indicates that GDP per capita is less related to life expectancy for countries as GDP per capita increases.
 
 ```{python}
 #| echo: false
@@ -95,11 +94,11 @@ plt.grid(True)
 plt.show()
 ```
 
+## Takeaways
+- positive correlation between GDP per capita and life expectancy
+- diminishing returns as GDP per capita increases
 
 ## Education Expenditure (% of GDP)
-
-For Education Expenditure as a percentage of GDP, data is available for 105 countries. The mean expenditure is 4.23% of GDP, with a standard deviation of 2.07%, reflecting variability in national investment in education.
-
 ```{python}
 #| echo: false
 #| label: fig-education-expenditure-histogram
@@ -114,6 +113,10 @@ plt.grid(axis='y', alpha=0.75)
 plt.show()
 ```
 
+## Takeaways
+-mean expenditure is 4.23% of GDP
+- standard deviation of 2.07%
+
 ## More Key Statistics (Education Expenditure):
 
 - Minimum Education Expenditure: 1.027%
@@ -121,8 +124,6 @@ plt.show()
 - Median (50th percentile): 3.887%
 - 25th percentile: 2.898%
 - 75th percentile: 5.156%
-
-The median expenditure is slightly below the mean, indicating a slight left-skew in the distribution, which we can again observe above, in @fig-education-expenditure-histogram. The majority of countries spend between approximately 2.90% and 5.16% of their GDP on education. The maximum value of 16.58% suggests that some countries prioritize education significantly more than others relative to their economic output.
 
 ## Top 10 Countries by Education Expenditure (% of GDP) in 2022
 
@@ -145,6 +146,12 @@ plt.show()
 
 
 ```
+
+## Further Visualizing
+
+![Public Spending on Education as a Percentage of GDP](total-government-expenditure-on-education-gdp.png){ align="center" }
+
+Another visual of education expenditure as a percentage of GDP from @ourworldindata_education2023:
 
 ## Revisiting Summary Statistics
 ```{python}
