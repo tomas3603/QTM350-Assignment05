@@ -4,8 +4,10 @@ author: "Tomas Hossain-Aguilar"
 date: "10/7/2024"
 format:
   html:
+    theme: cosmo
     toc: true
     number-sections: true
+    self-contained: true
   pdf:
     toc: true
     number-sections: true
@@ -25,6 +27,8 @@ bibliography: references.bib
 This report serves to visualize and detail distributions of global GDP per capitas, Life-Expectancies, and Education Expenditure.
 
 The relationship between GDP per capita and Life-Expectancy will be explored, as well as nation's expenditure on education as a proportion of total GDP.
+
+The data used throughout this study is drawn from World Development Indicators @worldbank2022.
 
 ### GDP per capita
 
@@ -149,7 +153,7 @@ More Key Statistics:
 - 25th percentile: 2.898%
 - 75th percentile: 5.156%
 
-The median expenditure is slightly below the mean, indicating a slight left-skew in the distribution, which we can again observe above, in @fig-education-expenditure-histogram. The majority of countries spend between approximately 2.90% and 5.16% of their GDP on education. The maximum value of 16.58% suggests that some countries prioritize education significantly more than others relative to their economic output.
+The median expenditure is slightly below the mean, indicating a slight left-skew in the distribution, which we can again observe above, in @fig-education-expenditure-histogram. The majority of countries spend between approximately 2.90% and 5.16% of their GDP on education. The maximum value of 16.58% suggests that some countries prioritize education significantly more than others relative to their economic output. Below Figure @fig-education-expenditure displays the 10 countries with the highest expenditure on education as a percentage of GDP.
 
 ::: {.cell execution_count=8}
 
@@ -158,6 +162,10 @@ The median expenditure is slightly below the mean, indicating a slight left-skew
 :::
 :::
 
+
+Another visual of education expenditure as a percentage of GDP from @ourworldindata_education2023:
+
+![Public Spending on Education as a Percentage of GDP](total-government-expenditure-on-education-gdp.png){ align="center" }
 
 ::: {#education-expenditure-summary-stats .cell execution_count=9}
 ``` {.python .cell-code}

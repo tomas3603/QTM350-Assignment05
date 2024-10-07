@@ -31,6 +31,8 @@ This report serves to visualize and detail distributions of global GDP per capit
 
 The relationship between GDP per capita and Life-Expectancy will be explored, as well as nation's expenditure on education as a proportion of total GDP.
 
+The data used throughout this study is drawn from World Development Indicators @worldbank2022.
+
 ### GDP per capita
 
 The **GDP per capita** for the 203 countries in the dataset exhibits a wide range, reflecting significant disparities in economic prosperity across the world. The mean GDP per capita is approximately **\$20,345.71**, with a standard deviation of **\$31,308.94**, indicating substantial variability among countries.
@@ -152,9 +154,7 @@ More Key Statistics:
 - 25th percentile: 2.898%
 - 75th percentile: 5.156%
 
-The median expenditure is slightly below the mean, indicating a slight left-skew in the distribution, which we can again observe above, in @fig-education-expenditure-histogram. The majority of countries spend between approximately 2.90% and 5.16% of their GDP on education. The maximum value of 16.58% suggests that some countries prioritize education significantly more than others relative to their economic output.
-
-
+The median expenditure is slightly below the mean, indicating a slight left-skew in the distribution, which we can again observe above, in @fig-education-expenditure-histogram. The majority of countries spend between approximately 2.90% and 5.16% of their GDP on education. The maximum value of 16.58% suggests that some countries prioritize education significantly more than others relative to their economic output. Below Figure @fig-education-expenditure displays the 10 countries with the highest expenditure on education as a percentage of GDP.
 
 ```{python}
 #| echo: false
@@ -175,6 +175,10 @@ plt.show()
 
 
 ```
+
+Another visual of education expenditure as a percentage of GDP from @ourworldindata_education2023:
+
+![Public Spending on Education as a Percentage of GDP](total-government-expenditure-on-education-gdp.png){ align="center" }
 
 
 ```{python}
