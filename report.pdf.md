@@ -15,8 +15,6 @@ execute:
   echo: true
 
 bibliography: references.bib
-
-pdf-engine: xelatex
 ---
 
 
@@ -213,13 +211,4 @@ max         240862.18            85.38                            16.58
 Our analysis of the relationship between **GDP per capita** and **life expectancy** in Figure @fig-gdp-life reveals a positive correlation, indicating that higher economic prosperity generally leads to better health outcomes. However, we also observed diminishing returns at higher GDP levels and significant variability among countries with similar economic standings. This suggests that factors beyond mere economic wealth—such as healthcare infrastructure, education quality, and social policies—play crucial roles in determining life expectancy.
 
 McKinsey Global Institute's "Pixels of Progress: Chapter 3" @mckinsey2023pixels echoes these findings by exploring how advancements in various sectors contribute to human development beyond traditional economic metrics. The article emphasizes that while economic growth is essential, it is not sufficient on its own to ensure improved life expectancy and overall well-being. Investments in **healthcare access**, **education**, and **technological innovation** are highlighted as critical drivers of progress.
-
-
----
-
-*References:*
-
-- McKinsey Global Institute. (2023). *Pixels of Progress: Chapter 3*. Retrieved from [https://www.mckinsey.com/mgi/our-research/pixels-of-progress-chapter-3](https://www.mckinsey.com/mgi/our-research/pixels-of-progress-chapter-3)
-
-- World Bank. (2022). *World Development Indicators*. Retrieved from [https://databank.worldbank.org/source/world-development-indicators](https://databank.worldbank.org/source/world-development-indicators)
 
