@@ -1,0 +1,164 @@
+---
+title: "Exploratory Analysis Presentation"
+author: "Tomas Hossain-Aguilar"
+date: "10/7/2024"
+bibliography: references.bib
+format:
+  revealjs:
+    theme: solarized
+    transition: slide
+---
+
+## Introduction
+
+- Overview of the World Development Indicators dataset.
+- Purpose of the analysis.
+
+## GDP per capita
+
+The **GDP per capita** for the 203 countries in the dataset exhibits a wide range, reflecting significant disparities in economic prosperity across the world. The mean GDP per capita is approximately **\$20,345.71**, with a standard deviation of **\$31,308.94**, indicating substantial variability among countries.
+
+```{python}
+#| echo: false
+#| label: fig-gdp-histogram
+#| fig-cap: "Figure 3: Distribution of GDP per Capita (2022). Source: World Development Indicators."
+
+import matplotlib.pyplot as plt
+import pandas as pd
+data = pd.read_csv("wdi.csv")
+
+plt.figure(figsize=(10, 6))
+plt.hist(data['gdp_per_capita'], bins=30, color='skyblue', edgecolor='black')
+plt.title('Distribution of GDP per Capita')
+plt.xlabel('GDP per Capita (USD)')
+plt.ylabel('Number of Countries')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+
+```
+
+
+## More Key Statistics (GDP per capita):
+
+- **Minimum GDP per Capita:** \$259.03
+- **Maximum GDP per Capita:** \$240,862.18
+- **Median (50th percentile):** \$7,587.59
+- **25th percentile:** \$2,570.56
+- **75th percentile:** \$25,982.63
+
+The median GDP per capita is significantly lower than the mean, suggesting a right-skewed distribution where a small number of countries have very high GDP per capita values, elevating the average. We observe this skew in @fig-gdp-histogram, above. The majority of countries have GDP per capita values clustered between the 25th and 75th percentiles (\$2,570.56 to \$25,982.63).
+
+## Life Expectancy
+
+The **Life Expectancy** data for 209 countries shows a global average of **72.42 years**, with a standard deviation of **7.71 years**, indicating moderate variation across countries.
+
+```{python}
+#| echo: false
+#| label: fig-life-expectancy-histogram
+#| fig-cap: "Figure 4: Distribution of Life Expectancy (2022). Source: World Development Indicators."
+
+plt.figure(figsize=(10, 6))
+plt.hist(data['life_expectancy'], bins=20, color='salmon', edgecolor='black')
+plt.title('Distribution of Life Expectancy')
+plt.xlabel('Life Expectancy (years)')
+plt.ylabel('Number of Countries')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+
+```
+
+## More Key Statistics (Life Expectancy):
+
+- **Minimum Life Expectancy:** 52.997 years
+- **Maximum Life Expectancy:** 85.377 years
+- **Median (50th percentile):** 73.51 years
+- **25th percentile:** 66.78 years
+- **75th percentile:** 78.475 years
+
+The median life expectancy is slightly higher than the mean, suggesting a relatively symmetrical distribution, which we can observe in the figure above, @fig-life-expectancy-histogram. The interquartile range (66.78 to 78.475 years) captures the middle 50% of countries, highlighting that most countries have life expectancies within this range. The gap between the minimum and maximum values underscores significant differences in health outcomes and living conditions worldwide.
+
+## GDP and Life Expectancy
+
+The scatter plot in Figure @fig-gdp-life presents the relationship between GDP per capita and life expectancy across various countries in 2022. An analysis of this graph reveals several important insights. Observe a positive correlation between GDP per capita and life expectancy, as well as 'diminishing returns' as GDP per capita increases. This indicates that GDP per capita is less related to life expectancy for countries as GDP per capita increases.
+
+```{python}
+#| echo: false
+#| label: fig-gdp-life
+#| fig-cap: "Figure 1: GDP per Capita vs. Life Expectancy (2022). Source: World Development Indicators."
+
+plt.figure(figsize=(10, 6))
+plt.scatter(data['gdp_per_capita'], data['life_expectancy'], alpha=0.7)
+plt.title('GDP per Capita vs. Life Expectancy')
+plt.xlabel('GDP per Capita (USD)')
+plt.ylabel('Life Expectancy (years)')
+plt.grid(True)
+plt.show()
+```
+
+
+## Education Expenditure (% of GDP)
+
+For Education Expenditure as a percentage of GDP, data is available for 105 countries. The mean expenditure is 4.23% of GDP, with a standard deviation of 2.07%, reflecting variability in national investment in education.
+
+```{python}
+#| echo: false
+#| label: fig-education-expenditure-histogram
+#| fig-cap: "Figure 5: Distribution of Education Expenditure (% of GDP) (2022). Source: World Development Indicators."
+
+plt.figure(figsize=(10, 6))
+plt.hist(data['education_expenditure_gdp_share'].dropna(), bins=15, color='lightgreen', edgecolor='black')
+plt.title('Distribution of Education Expenditure (% of GDP)')
+plt.xlabel('Education Expenditure (% of GDP)')
+plt.ylabel('Number of Countries')
+plt.grid(axis='y', alpha=0.75)
+plt.show()
+```
+
+## More Key Statistics (Education Expenditure):
+
+- Minimum Education Expenditure: 1.027%
+- Maximum Education Expenditure: 16.582%
+- Median (50th percentile): 3.887%
+- 25th percentile: 2.898%
+- 75th percentile: 5.156%
+
+The median expenditure is slightly below the mean, indicating a slight left-skew in the distribution, which we can again observe above, in @fig-education-expenditure-histogram. The majority of countries spend between approximately 2.90% and 5.16% of their GDP on education. The maximum value of 16.58% suggests that some countries prioritize education significantly more than others relative to their economic output.
+
+## Top 10 Countries by Education Expenditure (% of GDP) in 2022
+
+```{python}
+#| echo: false
+#| label: fig-education-expenditure
+#| fig-cap: "Figure 2: Top 10 Countries by Education Expenditure (% of GDP) (2022). Source: World Development Indicators."
+
+# Get top 10 countries
+top_10_education = data.nlargest(10, 'education_expenditure_gdp_share')
+
+# Plot
+plt.figure(figsize=(10, 6))
+plt.barh(top_10_education['country'], top_10_education['education_expenditure_gdp_share'], color='skyblue')
+plt.title('Top 10 Countries by Education Expenditure (% of GDP)')
+plt.xlabel('Education Expenditure (% of GDP)')
+plt.ylabel('Country')
+plt.gca().invert_yaxis()  # Highest value on top
+plt.show()
+
+
+```
+
+## Revisiting Summary Statistics
+```{python}
+#| echo: false
+#| label: tbl-key-stats
+#| tbl-cap: "Table 1: Key Statistics of Selected Indicators."
+
+# Create a DataFrame of key statistics
+key_stats = data[['gdp_per_capita', 'life_expectancy', 'education_expenditure_gdp_share']].describe().round(2)
+print(key_stats)
+```
+
+## McKinsey's Analysis "Pixel's of Progress: Chapter 3"
+
+Our analysis of the relationship between **GDP per capita** and **life expectancy** in Figure @fig-gdp-life reveals a positive correlation, indicating that higher economic prosperity generally leads to better health outcomes. However, we also observed diminishing returns at higher GDP levels and significant variability among countries with similar economic standings. This suggests that factors beyond mere economic wealth—such as healthcare infrastructure, education quality, and social policies—play crucial roles in determining life expectancy.
+
+McKinsey Global Institute's "Pixels of Progress: Chapter 3" @mckinsey2023pixels echoes these findings by exploring how advancements in various sectors contribute to human development beyond traditional economic metrics. The article emphasizes that while economic growth is essential, it is not sufficient on its own to ensure improved life expectancy and overall well-being. Investments in **healthcare access**, **education**, and **technological innovation** are highlighted as critical drivers of progress.
