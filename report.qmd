@@ -15,8 +15,6 @@ execute:
   echo: true
 
 bibliography: references.bib
-
-pdf-engine: xelatex
 ---
 ```{python}
 #| echo: false
