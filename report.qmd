@@ -61,7 +61,7 @@ More Key Statistics:
 - **25th percentile:** \$2,570.56
 - **75th percentile:** \$25,982.63
 
-The median GDP per capita is significantly lower than the mean, suggesting a right-skewed distribution where a small number of countries have very high GDP per capita values, elevating the average. We observe this skew in @fig-gdp-histogram, above. The majority of countries have GDP per capita values clustered between the 25th and 75th percentiles (\$2,570.56 to \$25,982.63).
+The median GDP per capita is significantly lower than the mean, suggesting a heavily right-skewed distribution where a small number of countries have very high GDP per capita values, elevating the average. We observe this skew in @fig-gdp-histogram, above. The majority of countries have GDP per capita values clustered between the 25th and 75th percentiles (\$2,570.56 to \$25,982.63).
 
 ```{python}
 #| echo: true
@@ -100,7 +100,7 @@ More Key Statistics:
 - **25th percentile:** 66.78 years
 - **75th percentile:** 78.475 years
 
-The median life expectancy is slightly higher than the mean, suggesting a relatively symmetrical distribution, which we can observe in the figure above, @fig-life-expectancy-histogram. The interquartile range (66.78 to 78.475 years) captures the middle 50% of countries, highlighting that most countries have life expectancies within this range. The gap between the minimum and maximum values underscores significant differences in health outcomes and living conditions worldwide.
+The median life expectancy is slightly higher than the mean, suggesting a relatively left-skewed distribution, which we can observe in the figure above, @fig-life-expectancy-histogram. The interquartile range (66.78 to 78.475 years) captures the middle 50% of countries, highlighting that most countries have life expectancies within this range. The gap between the minimum and maximum values underscores significant differences in health outcomes and living conditions worldwide.
 
 The scatter plot in Figure @fig-gdp-life presents the relationship between GDP per capita and life expectancy across various countries in 2022. An analysis of this graph reveals several important insights. Observe a positive correlation between GDP per capita and life expectancy, as well as 'diminishing returns' as GDP per capita increases. This indicates that GDP per capita is less related to life expectancy for countries as GDP per capita increases.
 
@@ -153,7 +153,7 @@ More Key Statistics:
 - 25th percentile: 2.898%
 - 75th percentile: 5.156%
 
-The median expenditure is slightly below the mean, indicating a slight left-skew in the distribution, which we can again observe above, in @fig-education-expenditure-histogram. The majority of countries spend between approximately 2.90% and 5.16% of their GDP on education. The maximum value of 16.58% suggests that some countries prioritize education significantly more than others relative to their economic output. Below Figure @fig-education-expenditure displays the 10 countries with the highest expenditure on education as a percentage of GDP.
+The median expenditure is slightly below the mean, indicating a right-skew in the distribution, which we can again observe above, in @fig-education-expenditure-histogram. The majority of countries spend between approximately 2.90% and 5.16% of their GDP on education. The maximum value of 16.58% suggests that some countries prioritize education significantly more than others relative to their economic output. Below Figure @fig-education-expenditure displays the 10 countries with the highest expenditure on education as a percentage of GDP.
 
 ```{python}
 #| echo: false
@@ -169,7 +169,7 @@ plt.barh(top_10_education['country'], top_10_education['education_expenditure_gd
 plt.title('Top 10 Countries by Education Expenditure (% of GDP)')
 plt.xlabel('Education Expenditure (% of GDP)')
 plt.ylabel('Country')
-plt.gca().invert_yaxis()  # Highest value on top
+plt.gca().invert_yaxis()  
 plt.show()
 
 
